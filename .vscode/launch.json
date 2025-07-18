@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "name": "Run cpp_practice01",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/cpp_practice01.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true,  // <-- 使用外部命令行窗口，避免内置终端问题
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "启用 Pretty Print",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build cpp_practice01"
+    }
+  ]
+}
