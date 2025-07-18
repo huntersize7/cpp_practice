@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
+#include <windows.h>
 using namespace std;
 
 // 学生信息结构
@@ -86,6 +87,10 @@ public:
 };
 
 int main() {
+    // 设置控制台编码为UTF-8，解决中文乱码问题
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+
     cout << "=== 第14天：综合练习2 - 学生成绩管理系统 ===" << endl;
     cout << "欢迎使用学生成绩管理系统！" << endl;
     cout << "===========================================" << endl << endl;

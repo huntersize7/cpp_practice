@@ -10,6 +10,7 @@
 #include <fstream>
 #include <cmath>
 #include <iomanip>
+#include <windows.h>
 using namespace std;
 
 // 计算历史记录结构
@@ -55,6 +56,10 @@ public:
 };
 
 int main() {
+    // 设置控制台编码为UTF-8，解决中文乱码问题
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+
     cout << "=== 第13天：综合练习1 - 简单计算器 ===" << endl;
     cout << "欢迎使用多功能计算器！" << endl;
     cout << "========================================" << endl << endl;

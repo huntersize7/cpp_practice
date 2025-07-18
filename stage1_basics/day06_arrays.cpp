@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <windows.h>
 using namespace std;
 
 // 函数声明
@@ -17,6 +18,10 @@ void bubbleSort();
 void practiceExercises();
 
 int main() {
+    // 设置控制台编码为UTF-8，解决中文乱码问题
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+
     cout << "=== 第6天：数组基础学习与实践 ===" << endl;
     cout << "今天我们将学习：" << endl;
     cout << "1. 数组的声明和初始化" << endl;

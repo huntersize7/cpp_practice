@@ -5,6 +5,7 @@
  */
 
 #include <iostream>
+#include <windows.h>
 using namespace std;
 
 // 函数声明
@@ -15,6 +16,9 @@ void oddEvenChecker();
 void menuSystem();
 
 int main() {
+    // 设置控制台编码为UTF-8，解决中文乱码问题
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
     cout << "=== 第4天：条件语句学习与实践 ===" << endl;
     cout << "今天我们将学习：" << endl;
     cout << "1. if-else语句" << endl;
@@ -212,89 +216,77 @@ void oddEvenChecker() {
 // 练习2：菜单选择程序
 void menuSystem() {
     int choice;
-    bool continueProgram = true;
-    
-    while (continueProgram) {
-        cout << "\n=== 简单计算器菜单 ===" << endl;
-        cout << "1. 加法运算" << endl;
-        cout << "2. 减法运算" << endl;
-        cout << "3. 乘法运算" << endl;
-        cout << "4. 除法运算" << endl;
-        cout << "5. 判断奇偶数" << endl;
-        cout << "6. 比较两个数大小" << endl;
-        cout << "0. 退出程序" << endl;
-        cout << "请选择操作 (0-6)：";
+
+    cout << "\n=== 简单计算器菜单 ===" << endl;
+    cout << "1. 加法运算" << endl;
+    cout << "2. 减法运算" << endl;
+    cout << "3. 乘法运算" << endl;
+    cout << "4. 除法运算" << endl;
+    cout << "5. 判断奇偶数" << endl;
+    cout << "6. 比较两个数大小" << endl;
+    cout << "请选择操作 (1-6)：";
+
+    cin >> choice;
         
-        cin >> choice;
-        
-        switch (choice) {
-            case 1: {
-                double num1, num2;
-                cout << "请输入两个数：";
-                cin >> num1 >> num2;
-                cout << "结果：" << num1 << " + " << num2 << " = " << (num1 + num2) << endl;
-                break;
-            }
-            case 2: {
-                double num1, num2;
-                cout << "请输入两个数：";
-                cin >> num1 >> num2;
-                cout << "结果：" << num1 << " - " << num2 << " = " << (num1 - num2) << endl;
-                break;
-            }
-            case 3: {
-                double num1, num2;
-                cout << "请输入两个数：";
-                cin >> num1 >> num2;
-                cout << "结果：" << num1 << " × " << num2 << " = " << (num1 * num2) << endl;
-                break;
-            }
-            case 4: {
-                double num1, num2;
-                cout << "请输入两个数：";
-                cin >> num1 >> num2;
-                if (num2 != 0) {
-                    cout << "结果：" << num1 << " ÷ " << num2 << " = " << (num1 / num2) << endl;
-                } else {
-                    cout << "错误：除数不能为零！" << endl;
-                }
-                break;
-            }
-            case 5: {
-                int num;
-                cout << "请输入一个整数：";
-                cin >> num;
-                cout << num << " 是" << ((num % 2 == 0) ? "偶数" : "奇数") << endl;
-                break;
-            }
-            case 6: {
-                double num1, num2;
-                cout << "请输入两个数：";
-                cin >> num1 >> num2;
-                if (num1 > num2) {
-                    cout << num1 << " 大于 " << num2 << endl;
-                } else if (num1 < num2) {
-                    cout << num1 << " 小于 " << num2 << endl;
-                } else {
-                    cout << num1 << " 等于 " << num2 << endl;
-                }
-                break;
-            }
-            case 0:
-                cout << "感谢使用！程序退出。" << endl;
-                continueProgram = false;
-                break;
-            default:
-                cout << "无效选择！请输入0-6之间的数字。" << endl;
-                break;
+    switch (choice) {
+        case 1: {
+            double num1, num2;
+            cout << "请输入两个数：";
+            cin >> num1 >> num2;
+            cout << "结果：" << num1 << " + " << num2 << " = " << (num1 + num2) << endl;
+            break;
         }
-        
-        if (continueProgram) {
-            cout << "\n按回车键继续...";
-            cin.ignore();
-            cin.get();
+        case 2: {
+            double num1, num2;
+            cout << "请输入两个数：";
+            cin >> num1 >> num2;
+            cout << "结果：" << num1 << " - " << num2 << " = " << (num1 - num2) << endl;
+            break;
         }
+        case 3: {
+            double num1, num2;
+            cout << "请输入两个数：";
+            cin >> num1 >> num2;
+            cout << "结果：" << num1 << " × " << num2 << " = " << (num1 * num2) << endl;
+            break;
+        }
+        case 4: {
+            double num1, num2;
+            cout << "请输入两个数：";
+            cin >> num1 >> num2;
+            if (num2 != 0) {
+                cout << "结果：" << num1 << " ÷ " << num2 << " = " << (num1 / num2) << endl;
+            } else {
+                cout << "错误：除数不能为零！" << endl;
+            }
+            break;
+        }
+        case 5: {
+            int num;
+            cout << "请输入一个整数：";
+            cin >> num;
+            cout << num << " 是" << ((num % 2 == 0) ? "偶数" : "奇数") << endl;
+            break;
+        }
+        case 6: {
+            double num1, num2;
+            cout << "请输入两个数：";
+            cin >> num1 >> num2;
+            if (num1 > num2) {
+                cout << num1 << " 大于 " << num2 << endl;
+            } else if (num1 < num2) {
+                cout << num1 << " 小于 " << num2 << endl;
+            } else {
+                cout << num1 << " 等于 " << num2 << endl;
+            }
+            break;
+        }
+        default:
+            cout << "无效选择！请输入1-6之间的数字。" << endl;
+            break;
     }
+
+    cout << "\n菜单演示完成！" << endl;
 }
 
 /*

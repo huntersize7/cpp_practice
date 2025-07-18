@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <windows.h>
 using namespace std;
 
 // 函数声明
@@ -18,6 +19,10 @@ void calculateSum();
 void practiceExercises();
 
 int main() {
+    // 设置控制台编码为UTF-8，解决中文乱码问题
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+
     cout << "=== 第5天：循环语句学习与实践 ===" << endl;
     cout << "今天我们将学习：" << endl;
     cout << "1. for循环" << endl;
